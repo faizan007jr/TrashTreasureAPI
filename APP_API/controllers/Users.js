@@ -55,6 +55,7 @@ const createUser = (req, res) => {
                         .json(err);
                     return;
                 }
+                req.session.user = userData.username;
                 res
                     .status(201)
                     .json(userData);
@@ -86,14 +87,14 @@ const getSingleUser = (req, res) => {
 };
 
 const updatePassword = (req, res) => {
-    if(!req.params.username) {
+    if(!req.session.user) {
         res
             .status(404)
-            .json({ "message" : "Not found, Username is required" });
+            .json({ "message" : "Not found, User must login" });
         return;
     }
     Users
-        .findOne({ username: req.params.username })
+        .findOne({ username: req.session.user })
         .exec((err, userData) => {
             if(!userData) {
                 res
@@ -130,14 +131,14 @@ const updatePassword = (req, res) => {
 };
 
 const updateProfileImage = (req, res) => {
-    if(!req.params.username) {
+    if(!req.session.user) {
         res
             .status(404)
-            .json({ "message" : "Not found, Username is required" });
+            .json({ "message" : "Not found, User is not logged in" });
         return;
     }
     Users
-        .findOne({ username: req.params.username })
+        .findOne({ username: req.session.user })
         .exec((err, userData) => {
             if(!userData) {
                 res
@@ -167,14 +168,14 @@ const updateProfileImage = (req, res) => {
 };
 
 const updateAddress = (req, res) => {
-    if(!req.params.username) {
+    if(!req.session.user) {
         res
             .status(404)
-            .json({ "message" : "Not found, Username is required" });
+            .json({ "message" : "Not found, User must be logged in" });
         return;
     }
     Users
-        .findOne({ username: req.params.username })
+        .findOne({ username: req.session.user })
         .exec((err, userData) => {
             if(!userData) {
                 res
@@ -218,11 +219,54 @@ const updateAddress = (req, res) => {
         });
 };
 
+const login = (req, res) => {
+    Users
+        .findOne({
+            username: req.body.username,
+            pwd: req.body.pwd
+        })
+        .exec((err, userData) => {
+            if(!userData) {
+                res
+                    .status(404)
+                    .json({ "message" : "Invalid username or password" });
+                return;
+            } else if(err) {
+                res
+                    .status(404)
+                    .json(err);
+                return;
+            }
+            req.session.user = userData.username;
+            res
+                .status(200)
+                .json({
+                    "message" : "Login Successful",
+                    "username" : req.session.user
+                });
+        });
+};
+
+const logout = (req, res) => {
+    if (req.session.user && req.cookies.user_sid) {
+        req.session.destroy();
+        res
+            .status(401)
+            .json({ "message" : "User Logged out" });
+    } else {
+        res
+            .status(404)
+            .json({ "message" : "Invalid user" });
+    }
+};
+
 module.exports = {
     getUsers,
     createUser,
     getSingleUser,
     updatePassword,
     updateProfileImage,
-    updateAddress
+    updateAddress,
+    login,
+    logout
 };

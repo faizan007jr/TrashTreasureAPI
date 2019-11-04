@@ -22,7 +22,7 @@ const getProducts = (req, res) => {
 const createProduct = (req, res) => {
     Products
         .create({
-            username: req.body.userid,
+            username: req.session.user,
             category: req.body.categoryid,
             name: req.body.name,
             description: req.body.description,
