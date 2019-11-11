@@ -2,7 +2,7 @@
     <main class="album py-5 bg-light text-left">
         <div class="container">
             <div class="row">
-                <product-component v-for="product in productList" :product="product" :editable="false" :key="product._id"></product-component>
+                <product-component v-for="product in productList" :product="product" :editable="true" :key="product._id"></product-component>
             </div>
         </div>
     </main>
@@ -10,20 +10,22 @@
 
 <script>
     import {mapActions, mapGetters} from "vuex";
-    import ProductComponent from "./ProductComponent";
     import store from "../vuex/store";
+    import ProductComponent from "./ProductComponent";
 
     export default {
+        name: "YourAdsComponent",
         components: {
             ProductComponent
         },
-        methods: mapActions(['populateProductList']),
+        methods: mapActions(['fetchProductsByUser']),
         computed: mapGetters({
-            productList: 'getProductList'
+            productList: 'getProductsByUser',
+            token: 'getToken'
         }),
         store,
         mounted() {
-            this.populateProductList();
+            this.fetchProductsByUser(this.token);
         }
     }
 </script>

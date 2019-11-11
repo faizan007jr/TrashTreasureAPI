@@ -1,6 +1,6 @@
 <template>
 
-    <main class="">
+    <main>
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-form-title" :style="{'background-image': `url(${require('../assets/bg-01.jpg')})`}">
@@ -11,11 +11,11 @@
                 <div class="login100-form">
                     <div class="wrap-input100">
                         <span class="label-input100">Username</span>
-                        <input class="input100 form-control" type="text" name="username" v-model="username" placeholder="Enter username" required>
+                        <input class="input100 form-control" @keydown.enter="onLogin" type="text" name="username" v-model="username" placeholder="Enter username" required>
                     </div>
                     <div class="wrap-input100 mt-2">
                         <span class="label-input100">Password</span>
-                        <input class="input100 form-control" type="password" name="pass" v-model="password" placeholder="Enter password" required>
+                        <input class="input100 form-control" @keydown.enter="onLogin" type="password" name="pass" v-model="password" placeholder="Enter password" required>
                         <span class="focus-input100"></span>
                     </div>
                     <div class="flex-sb-m w-full p-b-30">
@@ -28,7 +28,7 @@
                     <div class="mt-3 offset-1 col-10">
                         <button @click="onLogin()" class="btn btn-success rounded-pill btn-block btn-lg">Login</button>
                     </div>
-                    <div v-if="loginStatus === 404" class="col-12 text-danger">
+                    <div v-if="loginStatus === 401" class="col-12 text-danger">
                         Invalid username or password!
                     </div>
                     <div v-else-if="loginStatus === 200" class="col-12 text-success">
@@ -99,7 +99,6 @@
         justify-content: center;
         align-items: center;
         padding: 15px;
-        background: #ebeeef;
     }
 
     .wrap-login100 {

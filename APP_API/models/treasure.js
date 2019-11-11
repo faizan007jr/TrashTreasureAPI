@@ -21,10 +21,15 @@ let userSchema = new Schema({
         lastName: {type: String, required: true, minLength: 3},
         username: {type: String, required: true, minLength: 5, unique: true},
         pwd: {type: String, required: true},
-        email: {type: String, required: true, minLength: 5, unique: true},
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+        },
         dob: {type: Date},
         address: {type: Schema.ObjectId, ref: 'Addresses', required: true},
-        profileImage: {type: String, unique: true}
+        profileImage: {type: String}
     },
     {
         collection: 'Users'
@@ -43,12 +48,14 @@ let chatSchema = new Schema({
 
 let chatModel = mongoose.model('Chats', chatSchema);
 
-let categorySchema = new Schema({
+let categorySchema = new Schema(
+    {
         category: {type: String, required: true}
     },
     {
         collection: 'Categories'
-    });
+    }
+);
 
 let categoryModel = mongoose.model('Categories', categorySchema);
 

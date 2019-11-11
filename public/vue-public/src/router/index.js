@@ -8,6 +8,8 @@ import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import SignUpComponent from "../components/SignUpComponent";
+import PostComponent from "../components/PostComponent";
+import YourAdsComponent from "../components/YourAdsComponent";
 
 Vue.use(BootstrapVue);
 
@@ -30,9 +32,19 @@ const routes = [
     component: LoginComponent
   },
   {
-    path: 'signup',
+    path: '/signup',
     name: 'signup',
     component: SignUpComponent
+  },
+  {
+    path: '/post',
+    name: 'post',
+    component: PostComponent
+  },
+  {
+    path: '/your-ads',
+    name : 'your-ads',
+    component: YourAdsComponent
   }
 ]
 

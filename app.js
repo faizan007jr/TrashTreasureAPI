@@ -2,7 +2,6 @@ let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
-let session = require('express-session');
 let logger = require('morgan');
 
 require('./APP_API/models/db');
@@ -13,30 +12,10 @@ let app = express();
 app.use(logger('dev'));
 app.use(express.json());
 
-// changing to true
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(session({
-  key: 'user_sid',
-  secret: 'somerandonstuffs',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    expires: 600000
-  }
-}));
-
-app.use((req, res, next) => {
-  if (req.cookies.user_sid && !req.session.user) {
-    res.clearCookie('user_sid');
-  }
-  next();
-});
-
-//app.use(express.static(path.join(__dirname,'public', 'src')));
-
-app.all('/*', function(req, res, next) {
+app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "*");
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");

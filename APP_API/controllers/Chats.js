@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Chats = mongoose.model('Chats');
 
 const sendMessage = (req, res) => {
-    let sender = req.session.user;
+    let sender = req.userCookie.username;
     let receiver = req.body.receiverid;
     let msg = req.body.message;
 
@@ -31,7 +31,7 @@ const sendMessage = (req, res) => {
 };
 
 const getMessages = (req, res) => {
-    let sender = req.session.user;
+    let sender = req.userCookie.username;
     let receiver = req.body.receiverid;
 
     if(!sender) {

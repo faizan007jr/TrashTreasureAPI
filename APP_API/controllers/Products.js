@@ -4,7 +4,27 @@ const Products = mongoose.model('Products');
 const getProducts = (req, res) => {
     Products
         .find()
-        .populate('username category')
+        .populate('category')
+        .sort([['name', 'ascending']])
+        .exec((err, productsData) => {
+            if(err) {
+                res
+                    .status(404)
+                    .json(err);
+                return;
+            }
+            res
+                .status(200)
+                .json(productsData);
+        });
+};
+
+const getProductsByUser = (req, res) => {
+    Products
+        .find({
+            username: req.userCookie.userId
+        })
+        .populate('category')
         .sort([['name', 'ascending']])
         .exec((err, productsData) => {
             if(err) {
@@ -22,8 +42,8 @@ const getProducts = (req, res) => {
 const createProduct = (req, res) => {
     Products
         .create({
-            username: req.session.user,
-            category: req.body.categoryid,
+            username: req.userCookie.userId,
+            category: req.body.category,
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
@@ -73,6 +93,7 @@ const updateAvailability = (req, res) => {
 
 module.exports = {
     getProducts,
+    getProductsByUser,
     createProduct,
     updateAvailability
 };

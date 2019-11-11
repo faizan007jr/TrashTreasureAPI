@@ -1,3 +1,13 @@
 export const POPULATE_PRODUCT_LIST = 'POPULATE_PRODUCT_LIST';
 
 export const LOGIN_STATUS = 'LOGIN_STATUS';
+
+export const SIGNUP_STATUS = 'SIGNUP_STATUS';
+
+export const TOKEN = 'TOKEN';
+
+export const CATEGORIES = 'CATEGORIES';
+
+export const IS_PRODUCT_POSTED = 'IS_PRODUCT_POSTED';
+
+export const PRODUCTS_BY_USER = 'PRODUCTS_BY_USER';
