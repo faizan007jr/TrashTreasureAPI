@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75dc693-1d48-4f10-9e38-be9b4e93ae35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/APP_API/middleware/check-auth-param.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_API/middleware/check-auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vue-public/public/member.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vue-public/src/assets/back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vue-public/src/components/PostComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vue-public/src/components/YourAdsComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_API/controllers/Chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_API/controllers/Chats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_API/controllers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_API/controllers/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_API/controllers/SessionChecker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_API/controllers/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_API/controllers/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_API/models/treasure.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_API/models/treasure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_API/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_API/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/components/LoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/components/LoginComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/components/ProductComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/components/ProductComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/components/ProductListComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/components/ProductListComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/components/SignUpComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/components/SignUpComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/vuex/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/vuex/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/vuex/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/vuex/getters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/vuex/mutation_types.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/vuex/mutation_types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/vuex/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/vuex/mutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vue-public/src/vuex/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vue-public/src/vuex/store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +70,8 @@
       <workItem from="1572799337737" duration="39000" />
       <workItem from="1572799583909" duration="31718000" />
       <workItem from="1573326702930" duration="48882000" />
+      <workItem from="1573873358629" duration="1275000" />
+      <workItem from="1574628741842" duration="492000" />
     </task>
     <servers />
   </component>
