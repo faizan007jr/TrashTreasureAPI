@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = (req, res ,next) => {
+module.exports = (req, res, next) => {
     try {
         const decode = jwt.verify(req.body.token, "somesecret");
         req.userCookie = decode;

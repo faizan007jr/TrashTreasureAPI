@@ -11,11 +11,12 @@ const ctrlChats = require('../controllers/Chats');
 const checkAuth = require('../middleware/check-auth');
 const checkAuthParam = require('../middleware/check-auth-param');
 
-router.get('/asd', checkAuth, (req, res) => {
-    res
-        .status(200)
-        .json({ "message": "Welcome " + req.userCookie.username });
-});
+// test checkAuth
+// router.get('/asd', checkAuth, (req, res) => {
+//     res
+//         .status(200)
+//         .json({ "message": "Welcome " + req.userCookie.username });
+// });
 
 //router.get('/users', ctrlUsers.getUsers);
 router.post('/users', ctrlUsers.createUser);
@@ -25,7 +26,7 @@ router.post('/users/checklogin', checkAuth, (req, res) => {
     console.log(req.userCookie);
     res
         .status(200)
-        .json({ "username" : req.userCookie.username });
+        .json({ "username": req.userCookie.username });
 });
 
 /*router.get('/users/logout', ctrlUsers.logout);*/

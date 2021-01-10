@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <section>
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark">
       <div class="container">
         <router-link to="/" class="navbar-brand font-italic">Trash&Treasure</router-link>
@@ -38,7 +38,7 @@
     </nav>
 
     <router-view class="main"/>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -109,4 +109,16 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(2, 0, 49, 0.25);
 }
 
+.toast-box {
+  padding: 12px 25px;
+  margin: 20px;
+}
+
+.toast-success {
+  background-color: forestgreen;
+}
+
+.toast-error {
+  background-color: red;
+}
 </style>

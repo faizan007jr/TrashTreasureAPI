@@ -17,14 +17,14 @@ export default {
                 commit(POPULATE_PRODUCT_LIST, response.data);
             });
     },
-    loginUser: ({ commit }, userData) => {
-        api.loginUser(userData)
+    loginUser: async ({ commit }, userData) => {
+        await api.loginUser(userData)
             .then(res => {
                 commit(LOGIN_STATUS, res.status);
                 commit(TOKEN, res.body.token);
-                router.push("/");
             })
             .catch(() => {
+                console.log(1);
                 commit(LOGIN_STATUS, 404);
             });
     },

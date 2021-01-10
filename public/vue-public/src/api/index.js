@@ -3,11 +3,9 @@ import VueResource from "vue-resource";
 
 Vue.use(VueResource);
 
-const API = "http://localhost:3000/api/";
+const API = "http://localhost:9100/api/";
 
 const ProductListResource = Vue.resource(API + "products");
-
-//const UserLogin = Vue.resource(API + "users/login");
 
 export default {
     fetchProductList: () => {
@@ -32,7 +30,6 @@ export default {
         return Vue.http.post(API + "products", productData);
     },
     getProductByUser: (token) => {
-        console.log(token);
         return Vue.http.get(API + "products/" + token);
     }
 };
